@@ -1,0 +1,78 @@
+{
+  "formatVersion": 1,
+  "coverageMode": "maintained-domain-subset",
+  "sources": [
+    {
+      "category": "ads",
+      "url": "https://easylist.to/easylist/easylist.txt",
+      "snapshot": "data/filter-sources/easylist.txt",
+      "sha256": "cba64763a8081102b8adb890f96ff00b5f6aeb01f2e14a02395e29bf881c6a80",
+      "version": "202610240337",
+      "lastModified": "24 Oct 2026 03:37 UTC"
+    },
+    {
+      "category": "trackers",
+      "url": "https://easylist.to/easylist/easyprivacy.txt",
+      "snapshot": "data/filter-sources/easyprivacy.txt",
+      "sha256": "13e98fc79fbe4f6912508b13bdb438f605d434da390d0b8484307fd02e29c0f6",
+      "version": "202610240337",
+      "lastModified": "24 Oct 2026 03:37 UTC"
+    }
+  ],
+  "license": {
+    "name": "CC BY-SA 3.0 Unported",
+    "authors": "The EasyList authors (https://easylist.to/)",
+    "snapshot": "data/filter-sources/LICENSE",
+    "bundled": "extension/rules/LICENSE",
+    "url": "https://creativecommons.org/licenses/by-sa/3.0/legalcode.txt",
+    "sha256": "3f941b3b89cf7b8370ceb83cc76d2120d471b58735d8ca60238a751a48d7f72f"
+  },
+  "localSource": "extension/rules/hosts.json",
+  "localSourceSha256": "43d8e9ef9b4f4da980b38bc7649974db8a3dfe439e82d3ec88de7491387b4072",
+  "domainBatchSize": 500,
+  "domainCounts": {
+    "ads": 51948,
+    "trackers": 46719
+  },
+  "ruleCounts": {
+    "ads": 855,
+    "trackers": 845
+  },
+  "conversion": {
+    "categories": {
+      "ads": {
+        "hostFilters": 53174,
+        "exceptionFilters": 749,
+        "scopedExceptions": 274,
+        "hostExceptions": 301,
+        "urlExceptions": 7,
+        "broadScopedExceptions": 0,
+        "ignoredCosmeticExceptions": 167,
+        "disabledFilters": 0,
+        "skippedBlockFilters": 6785,
+        "protectedDomains": 0,
+        "candidateDomains": 53174,
+        "compiledDomains": 51948,
+        "excludedDomains": 1226
+      },
+      "trackers": {
+        "hostFilters": 47069,
+        "exceptionFilters": 852,
+        "scopedExceptions": 468,
+        "hostExceptions": 381,
+        "urlExceptions": 3,
+        "broadScopedExceptions": 0,
+        "ignoredCosmeticExceptions": 0,
+        "disabledFilters": 0,
+        "skippedBlockFilters": 8443,
+        "protectedDomains": 0,
+        "candidateDomains": 47076,
+        "compiledDomains": 46719,
+        "excludedDomains": 357
+      }
+    },
+    "excludedRequestDomains": 626,
+    "excludedInitiatorDomains": 3,
+    "supplementalAllowRulesPerCategory": 751
+  }
+}

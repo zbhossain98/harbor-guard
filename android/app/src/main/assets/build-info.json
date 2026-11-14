@@ -1,0 +1,9 @@
+{
+  "version": "0.2.2",
+  "sourceHelperVersion": "0.3.3",
+  "adDomains": 51948,
+  "trackerDomains": 46719,
+  "networkAllowances": 751,
+  "filtersSha256": "99cc3ae1576d94148150c9bc331005154c6ba6e946d09b38bb7112f11d9cf0b9",
+  "compatibility": "Third-party host subset; resource-type exceptions are conservatively broadened."
+}

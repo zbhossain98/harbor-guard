@@ -1,0 +1,28 @@
+dist/
+node_modules/
+.cache/
+android/.gradle/
+android/app/build/
+android/local.properties
+*.log
+.DS_Store
+
+# Browser-generated extension data and local IDE state.
+extension/_metadata/
+.idea/
+.vscode/
+Thumbs.db
+
+# Credentials and signing material stay local.
+.env
+.env.*
+!.env.example
+*.keystore
+*.jks
+*.p12
+*.pfx
+*.pem
+*.key
+key.properties
+keystore.properties
+credentials.json

@@ -1,0 +1,41 @@
+name: Checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        node: [22, 24]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - run: npm test
+      - run: npm run check
+      - run: node scripts/update-rules.mjs --check
+      - run: npm run android:prepare
+      - name: Check generated Android assets
+        run: git diff --exit-code -- android/app/src/main/assets android/app/src/main/res/drawable
+      - run: npm run package
+      - run: npm run android:package
+      - name: Save extension and source bundles
+        if: matrix.os == 'ubuntu-latest' && matrix.node == 24
+        uses: actions/upload-artifact@v4
+        with:
+          name: harbor-guard
+          path: |
+            dist/harbor-guard-*.zip
+          if-no-files-found: error
+          retention-days: 30

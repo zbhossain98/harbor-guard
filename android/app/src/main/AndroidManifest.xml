@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <permission android:name="app.harborguard.youtube.INTERNAL" android:protectionLevel="signature" />
+    <uses-permission android:name="app.harborguard.youtube.INTERNAL" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <application android:label="HarborTube" android:icon="@drawable/harbor_icon"
+        android:allowBackup="false" android:usesCleartextTraffic="false" android:hardwareAccelerated="true"
+        android:theme="@style/HarborTheme" android:supportsRtl="true" android:enableOnBackInvokedCallback="true">
+        <service android:name=".PlayerService" android:exported="false" android:foregroundServiceType="mediaPlayback" />
+        <service android:name=".DownloadService" android:exported="false" android:foregroundServiceType="dataSync" />
+        <activity android:name=".MainActivity" android:exported="true"
+            android:launchMode="singleTask" android:configChanges="orientation|screenSize|keyboardHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter android:autoVerify="false">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="https" android:host="www.youtube.com" />
+                <data android:scheme="https" android:host="m.youtube.com" />
+                <data android:scheme="https" android:host="youtube.com" />
+                <data android:scheme="https" android:host="youtu.be" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

@@ -1,0 +1,20 @@
+{
+  "downloadedAt": "2026-10-24T03:54:18.136Z",
+  "files": [
+    {
+      "file": "easylist.txt",
+      "url": "https://easylist.to/easylist/easylist.txt",
+      "sha256": "cba64763a8081102b8adb890f96ff00b5f6aeb01f2e14a02395e29bf881c6a80"
+    },
+    {
+      "file": "easyprivacy.txt",
+      "url": "https://easylist.to/easylist/easyprivacy.txt",
+      "sha256": "13e98fc79fbe4f6912508b13bdb438f605d434da390d0b8484307fd02e29c0f6"
+    },
+    {
+      "file": "LICENSE",
+      "url": "https://creativecommons.org/licenses/by-sa/3.0/legalcode.txt",
+      "sha256": "3f941b3b89cf7b8370ceb83cc76d2120d471b58735d8ca60238a751a48d7f72f"
+    }
+  ]
+}

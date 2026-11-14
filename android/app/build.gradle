@@ -1,0 +1,41 @@
+plugins { id 'com.android.application' }
+
+android {
+    namespace 'app.harborguard.youtube'
+    compileSdk 35
+    buildToolsVersion '35.0.0'
+    defaultConfig {
+        applicationId 'app.harborguard.youtube'
+        minSdk 26
+        targetSdk 35
+        versionCode 4
+        versionName '0.2.2'
+    }
+    signingConfigs {
+        debug {
+            storeFile file('../../.cache/android-toolchain/debug.keystore')
+            storePassword 'android'
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
+        }
+    }
+    compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
+}
+
+dependencies {
+    implementation 'androidx.webkit:webkit:1.12.1'
+    testImplementation 'junit:junit:4.13.2'
+}
+
+// This small app compiles quickly. Avoid stale partial class output after a
+// failed Windows build by compiling its sources together on each change.
+tasks.withType(JavaCompile).configureEach {
+    options.incremental = false
+    // The in-process JDK compiler throws on ZipFS cleanup/toRealPath inside
+    // the Windows sandbox even after emitting valid bytecode. Use the JDK's
+    // command-line compiler; filesystem access remains in the same sandbox.
+    if (System.getProperty('os.name').toLowerCase().contains('windows')) {
+        options.fork = true
+        options.forkOptions.executable = new File(System.getProperty('java.home'), 'bin/javac.exe').absolutePath
+    }
+}

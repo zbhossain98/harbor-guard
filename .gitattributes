@@ -1,0 +1,8 @@
+* text=auto eol=lf
+*.png binary
+*.zip binary
+*.apk binary
+# Preserve the exact source bytes used by source-manifest.json hashes.
+data/filter-sources/* -text
+extension/rules/LICENSE -text
+android/app/src/main/assets/FILTERS-LICENSE.txt -text
